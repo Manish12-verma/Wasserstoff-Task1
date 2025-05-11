@@ -54,11 +54,11 @@ Navigate to the project directory and install dependencies for both the frontend
 
 ```bash
 # Install backend dependencies
-cd backend
+cd server
 npm install
 
 # Install frontend dependencies
-cd ../frontend
+cd ../client
 npm install
 ```
 
@@ -67,11 +67,11 @@ npm install
 Run the backend server:
 
 ```bash
-cd backend
+cd Server
 npm start
 ```
 
-The backend server will start on `http://localhost:5000` (or the port specified in your configuration).
+The backend server will start on `http://localhost:3001` (or the port specified in your configuration).
 
 #### 3. Start the Frontend Development Server
 
