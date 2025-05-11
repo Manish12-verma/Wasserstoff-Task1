@@ -7,7 +7,7 @@ A real-time collaborative rich-text editor built with **ReactJS**, **TailwindCSS
 
 -  **Login Page**
 
-![Editor Screenshot](./client/src/assets/Login%20.png)
+![Login Screenshot](./Client/src/assets/login%20.png)
 
 -  **Editor Page**
 
