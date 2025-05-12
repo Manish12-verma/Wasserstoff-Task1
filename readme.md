@@ -14,7 +14,9 @@ A real-time collaborative rich-text editor built with **ReactJS**, **TailwindCSS
 ![Multi-User Collaboration](./Client/src/assets/editor.png)
 
 ---
+## Live URL
 
+- **URL -** https://wasserstoff-task1.vercel.app/
 
 ## 🚀 Features
 
