@@ -1,4 +1,4 @@
-# 📝 Real-Time Collaborative Editor
+#  Real-Time Collaborative Editor
 
 A real-time collaborative rich-text editor built with **ReactJS**, **TailwindCSS**, **Socket.IO**, and **Quill.js**. This editor allows multiple users to edit the same document simultaneously with live updates, user identification.
 
@@ -18,32 +18,32 @@ A real-time collaborative rich-text editor built with **ReactJS**, **TailwindCSS
 
 - **URL -** https://wasserstoff-task1.vercel.app/
 
-## 🚀 Features
+##  Features
 
-- 🧑‍🤝‍🧑 **Multi-User Real-Time Editing**  
+-  **Multi-User Real-Time Editing**  
   Edits made by one user are instantly synchronized across all connected clients via WebSockets.
 
-- 🔄 **Live Synchronization**  
+-  **Live Synchronization**  
   Changes propagate in real-time using efficient WebSocket communication.
 
-- 🧑 **User Identification**  
+-  **User Identification**  
   Each user enters a unique name/ID when joining, shown to all collaborators.
 
-- ✍️ **Live Edit Tracking**  
+-  **Live Edit Tracking**  
   Visual indicators for who is typing, where their cursor is, or what was changed.
 
-- 💻 **Rich Text Editing**  
+-  **Rich Text Editing**  
   Formatting support like bold, italic, underline, headers, bullet lists, and more via Quill.js.
 
-- 🌐 **Responsive Design**  
+-  **Responsive Design**  
   Styled with TailwindCSS for modern and mobile-friendly UI.
 
-- 🧩 **Modular & Lightweight**  
+-  **Modular & Lightweight**  
   Can run locally without a database. Perfect for demos or personal use.
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Frontend:** ReactJS, Quill.js, TailwindCSS  
 - **Backend:** Node.js, Express, Socket.IO  
@@ -51,16 +51,16 @@ A real-time collaborative rich-text editor built with **ReactJS**, **TailwindCSS
 
 ---
 
-## 📦 Installation & Setup Guide
+##  Installation & Setup Guide
 
-### 🔁 Clone the Repository
+###  Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/realtime-collab-editor.git
 cd realtime-collab-editor
 ```
 
-### 🖥️ Start the Project Locally
+### 🖥 Start the Project Locally
 
 #### 1. Install Dependencies
 
@@ -100,11 +100,11 @@ The frontend will start on `http://localhost:5173/` by default.
 
 ---
 
-### 🌟 Access the Application
+###  Access the Application
 
 Once both servers are running, open your browser and navigate to `http://localhost:5173/` to use the application.
 
-## 🤝 Contribution
+##  Contribution
 
 Contributions are always welcome! If you'd like to contribute to this project, follow these steps:
 
@@ -146,11 +146,11 @@ Contributions are always welcome! If you'd like to contribute to this project, f
 
 ---
 
-### 💡 Guidelines
+###  Guidelines
 
 - Ensure your code follows the project's coding standards.
 - Write clear and concise commit messages.
 - Test your changes thoroughly before submitting a pull request.
 - If you're adding a new feature, update the documentation accordingly.
 
-Thank you for contributing! 😊
+Thank you for contributing! 
