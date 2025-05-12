@@ -5,6 +5,7 @@ import { io } from "socket.io-client";
 
 const SAVE_INTERVAL_MS = 2000;
 
+// Function to get the current line number based on the index
 const Editor = ({ username }) => {
   const [socket, setSocket] = useState(null);
   const editorRef = useRef(null);
@@ -12,6 +13,8 @@ const Editor = ({ username }) => {
   const bannerRef = useRef(null);
   const quillRef = useRef(null); // <-- Store the Quill instance
 
+
+  // Function to handle the socket connection
   useEffect(() => {
     const s = io("https://wasserstoff-task1.onrender.com");
     setSocket(s);
@@ -27,7 +30,8 @@ const Editor = ({ username }) => {
     quillRef.current = quill; // <-- Save it to ref so it persists
 
     socket.emit("join", username);
-
+  
+    // Listen for the "user-list" event to update the user list
    socket.on("update-user-list", (users) => {
   if (userListRef.current) {
     const uppercasedUsers = users.map((user) => user.toUpperCase());
@@ -35,7 +39,7 @@ const Editor = ({ username }) => {
   }
 });
 
-
+    // Listen for the "load-document" event to load the document
     socket.once("load-document", (document) => {
       quill.setContents(document);
       quill.enable();
@@ -45,21 +49,26 @@ const Editor = ({ username }) => {
         const index = quill.getSelection()?.index || 0;
         socket.emit("send-changes", { delta, user: username, index });
       });
+      
 
+      // Listen for changes from other users
       socket.on("receive-changes", ({ delta, user, index }) => {
         if (user !== username) {
           quill.updateContents(delta);
           highlightChange(user, index, delta);
         }
       });
-
+      
+      // Listen for the "save-document" event to save the document
       const interval = setInterval(() => {
         socket.emit("save-document", quill.getContents());
       }, SAVE_INTERVAL_MS);
 
       return () => clearInterval(interval);
     });
+   
 
+    //
     function highlightChange(user, index, delta) {
       if (user !== username && bannerRef.current && quillRef.current) {
         const color = getRandomColor();
@@ -77,12 +86,15 @@ const Editor = ({ username }) => {
         setTimeout(() => bannerRef.current.classList.add("hidden"), 2000);
       }
     }
+     
 
+    // Function to get the line number based on the index
     function getLineNumber(index) {
       const text = quill.getText(0, index);
       return text.split("\n").length;
     }
-
+    
+    // Function to generate a random color
     function getRandomColor() {
       return `hsl(${Math.floor(Math.random() * 360)}, 70%, 50%)`;
     }

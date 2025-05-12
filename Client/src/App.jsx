@@ -6,6 +6,7 @@ const App = () => {
   const [username, setUsername] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
+  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     if (username.trim()) setSubmitted(true);
@@ -13,7 +14,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-[#989ca0] flex items-center justify-center px-4">
-      {!submitted ? (
+      {!submitted ? (      // Show the form if not submitted *)
         <form
           onSubmit={handleSubmit}
           className="w-full max-w-sm bg-white p-8 rounded-2xl space-y-6 border border-gray-200"
@@ -42,7 +43,7 @@ const App = () => {
             Enter
           </button>
         </form>
-      ) : (
+      ) : (   //Show the editor if submitted 
         <Editor  username={username}  />
       )}
     </div>
